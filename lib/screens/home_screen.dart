@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'detail_screen.dart';
+
 import '../widgets/custom_card.dart';
 
 // baris ini diaktifkan Sofil nanti pas ngisi navigasi
@@ -29,11 +31,14 @@ class HomeScreen extends StatelessWidget {
             hargaEvent: 'Rp50.000',
             icon: Icons.computer,
             onPressed: () {
-              // BAGIAN SOFIL: SnackBar ini nanti diganti Navigator.push
-              // ke DetailScreen(namaEvent: 'Seminar Teknologi 2026',
-              // hargaEvent: 'Rp50.000')
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Detail: Seminar Teknologi 2026')),
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailScreen(
+                    namaEvent: 'Seminar Teknologi 2026',
+                    hargaEvent: 'Rp50.000',
+                  ),
+                ),
               );
             },
           ),
@@ -43,10 +48,14 @@ class HomeScreen extends StatelessWidget {
             hargaEvent: 'Rp75.000',
             icon: Icons.phone_android,
             onPressed: () {
-              // BAGIAN SOFIL: ganti jadi Navigator.push ke DetailScreen
-              // (namaEvent: 'Workshop Flutter Dasar', hargaEvent: 'Rp75.000')
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Detail: Workshop Flutter Dasar')),
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailScreen(
+                    namaEvent: 'Workshop Flutter Dasar',
+                    hargaEvent: 'Rp75.000',
+                  ),
+                ),
               );
             },
           ),
@@ -56,11 +65,13 @@ class HomeScreen extends StatelessWidget {
             hargaEvent: 'Gratis',
             icon: Icons.smart_toy,
             onPressed: () {
-              // BAGIAN SOFIL: ganti jadi Navigator.push ke DetailScreen
-              // (namaEvent: 'Webinar Kecerdasan Buatan', hargaEvent: 'Gratis')
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Detail: Webinar Kecerdasan Buatan'),
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailScreen(
+                    namaEvent: 'Webinar Kecerdasan Buatan',
+                    hargaEvent: 'Gratis',
+                  ),
                 ),
               );
             },
